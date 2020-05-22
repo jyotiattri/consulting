@@ -207,47 +207,15 @@ Vue.component("services-component", {
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-10">
+                <div class="col-lg-6 col-md-6 col-sm-10" v-for="item in items"
+                :key="item.itemname">
                     <div class="single-services mb-100">
                         <div class="services-img">
-                            <img src="assets/img/gallery/services1.png" alt="">
+                            <img :src="item.itemimage" alt="">
                             </div>
                             <div class="services-caption">
-                            <span>Strategy planing</span>
-                            <p><a href="#">Within the construction industry as their overdraft</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-10">
-                    <div class="single-services mb-100">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/services2.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                            <span>Strategy planing</span>
-                            <p><a href="#">Within the construction industry as their overdraft</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-10">
-                    <div class="single-services mb-100">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/services3.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                            <span>Strategy planing</span>
-                            <p><a href="#">Within the construction industry as their overdraft</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-10">
-                    <div class="single-services mb-100">
-                        <div class="services-img">
-                            <img src="assets/img/gallery/services4.png" alt="">
-                            </div>
-                            <div class="services-caption">
-                            <span>Strategy planing</span>
-                            <p><a href="#">Within the construction industry as their overdraft</a></p>
+                            <span>{{item.itemname}}</span>
+                            <p><a href="#">{{item.itemdetails}}</a></p>
                         </div>
                     </div>
                 </div>
@@ -255,6 +223,32 @@ Vue.component("services-component", {
         </div>
     </div>
     `,
+    data() {
+        return {
+            items: [
+                {
+                    itemimage: 'assets/img/gallery/services1.png',
+                    itemname: 'Strategy planing',
+                    itemdetails: 'Within the construction industry as their overdraft'
+                },
+                {
+                    itemimage: 'assets/img/gallery/services2.png',
+                    itemname: 'Strategy planing',
+                    itemdetails: 'Within the construction industry as their overdraft'
+                },
+                {
+                    itemimage: 'assets/img/gallery/services3.png',
+                    itemname: 'Strategy planing',
+                    itemdetails: 'Within the construction industry as their overdraft'
+                },
+                {
+                    itemimage: 'assets/img/gallery/services4.png',
+                    itemname: 'Strategy planing',
+                    itemdetails: 'Within the construction industry as their overdraft'
+                },
+            ]
+    }
+}
 });
 Vue.component("testimonial-component", {
     template: `
