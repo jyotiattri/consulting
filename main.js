@@ -124,43 +124,44 @@ template: `
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="col-lg-4 col-md-6 col-sm-6" v-for="service in services"
+        :key="service.servicename">
             <div class="single-cat text-center mb-50">
                 <div class="cat-icon">
-                    <span class="flaticon-development"></span>
+                    <span :class="service.serviceicon"></span>
                 </div>
                 <div class="cat-cap">
-                    <h5><a href="services.html">Strategy Planning </a></h5>
-                    <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
+                    <h5><a href="services.html">{{service.servicename}} </a></h5>
+                    <p>{{service.servicedetails}}</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-cat text-center mb-50">
-                <div class="cat-icon">
-                    <span class="flaticon-result"></span>
-                </div>
-                <div class="cat-cap">
-                    <h5><a href="services.html">Insurance Service</a></h5>
-                    <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="single-cat text-center mb-50">
-                <div class="cat-icon">
-                    <span class="flaticon-team"></span>
-                </div>
-                <div class="cat-cap">
-                    <h5><a href="services.html">Audit & Evaluation</a></h5>
-                    <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </div>
 </div>
-`
+`,
+data() {
+    return {
+        services: [
+            {
+                serviceicon: 'flaticon-development',
+                servicename: 'Strategy Planning',
+                servicedetails: 'There are many variations of passages of lorem Ipsum available but the new majority have suffered.',
+            },
+            {
+                serviceicon: 'flaticon-result',
+                servicename: 'Insurance Service',
+                servicedetails: 'There are many variations of passages of lorem Ipsum available but the new majority have suffered.',
+            },
+            {
+                serviceicon: 'flaticon-team',
+                servicename: 'Audit & Evaluation',
+                servicedetails: 'There are many variations of passages of lorem Ipsum available but the new majority have suffered.',
+            },
+        ]
+    }
+}
 }),
 Vue.component("support-component", {
     template: `
