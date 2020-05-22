@@ -361,42 +361,21 @@ Vue.component("team-component", {
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-70">
                         <span>Our Professional members </span>
-                        <h2>Our Team Mambers</h2>
+                        <h2>Our Team Members</h2>
                     </div> 
                 </div>
             </div>
             <div class="row">
                 <!-- single Tem -->
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-" v-for="member in members"
+                :key="member.membername">
                     <div class="single-team mb-30">
                         <div class="team-img">
-                            <img src="assets/img/gallery/team2.png" alt="">
+                            <img :src="member.memberimage" alt="">
                         </div>
                         <div class="team-caption">
-                            <h3><a href="#">Ethan Welch</a></h3>
-                            <span>UX Designer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                    <div class="single-team mb-30">
-                        <div class="team-img">
-                            <img src="assets/img/gallery/team3.png" alt="">
-                        </div>
-                        <div class="team-caption">
-                            <h3><a href="#">Ethan Welch</a></h3>
-                            <span>UX Designer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                    <div class="single-team mb-30">
-                        <div class="team-img">
-                            <img src="assets/img/gallery/team1.png" alt="">
-                        </div>
-                        <div class="team-caption">
-                            <h3><a href="#">Ethan Welch</a></h3>
-                            <span>UX Designer</span>
+                            <h3><a href="#">{{member.membername}}</a></h3>
+                            <span>{{member.memberdetails}}</span>
                         </div>
                     </div>
                 </div>
@@ -404,6 +383,27 @@ Vue.component("team-component", {
         </div>
     </div>
     `,
+    data() {
+        return {
+            members:[
+                {
+                    memberimage: 'assets/img/gallery/team1.png',
+                    membername: 'Robert',
+                    memberdetails: 'UX Designer'
+                },
+                {
+                    memberimage: 'assets/img/gallery/team2.png',
+                    membername: 'Charles',
+                    memberdetails: 'Frontend Developer'
+                },
+                {
+                    memberimage: 'assets/img/gallery/team3.png',
+                    membername: 'Harry',
+                    memberdetails: 'Marketing Head'
+                },
+            ]
+        }
+    }
 });
 Vue.component("wanttowork-component", {
     template: `
